@@ -39,6 +39,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=$TARGETARCH GO111MODULE=on go build -a -o li
 FROM alpine
 
 COPY --from=builder /workspace/livekit-server /livekit-server
-COPY config.yml /livekit.yml
+COPY config.yaml /livekit.yml
 # Run the binary.
 ENTRYPOINT ["/livekit-server"]
